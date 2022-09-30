@@ -10,6 +10,8 @@ class ChatBot;
 class GraphEdge;
 class GraphNode;
 
+typedef std::unique_ptr<GraphNode> GraphNodePtr;
+
 class ChatLogic
 {
 private:
@@ -17,8 +19,9 @@ private:
     ////
 
     // data handles (owned)
-    std::vector<GraphNode *> _nodes;
-    std::vector<GraphEdge *> _edges;
+    std::vector<GraphNodePtr> _nodes;
+    /*** no longer needed for cleaning up as every edge is exclusively owned by an GraphNode instance
+    std::vector<GraphEdge *> _edges; **/
 
     ////
     //// EOF STUDENT CODE
