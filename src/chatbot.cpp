@@ -76,7 +76,7 @@ ChatBot& ChatBot::operator=(const ChatBot& source) {
       return *this;
    }
    delete _image;
-   image = new wxBitmap(source._image->GetPixmap());
+   _image = new wxBitmap(source._image->GetPixmap());
    this->_chatLogic = source._chatLogic;
    this->_chatLogic->SetChatbotHandle(this);
    this->_rootNode = source._rootNode;
